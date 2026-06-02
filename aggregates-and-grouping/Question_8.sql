@@ -2,6 +2,7 @@
 each supplier and the number of items they supply? You can answer this query
 by only looking at the Products table. */
 
-SELECT SupplierID
+SELECT SupplierID, COUNT(*) as ItemCount
 FROM products
-ORDER BY UnitsInStock;
+GROUP BY SupplierID
+HAVING ItemCount >= 5;
